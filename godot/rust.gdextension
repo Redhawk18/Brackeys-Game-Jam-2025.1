@@ -4,12 +4,12 @@ compatibility_minimum = 4.1
 reloadable = true
 
 [libraries]
-linux.debug.x86_64 =     "res://../rust/target/debug/libdishwasher.so"
-linux.release.x86_64 =   "res://../rust/target/release/libdishwasher.so"
-windows.debug.x86_64 =   "res://../rust/target/debug/dishwasher.dll"
-windows.release.x86_64 = "res://../rust/target/release/dishwasher.dll"
-macos.debug =            "res://../rust/target/debug/libdishwasher.dylib"
-macos.release =          "res://../rust/target/release/libdishwasher.dylib"
-macos.debug.arm64 =      "res://../rust/target/debug/libdishwasher.dylib"
-macos.release.arm64 =    "res://../rust/target/release/libdishwasher.dylib"
+linux.debug.x86_64 =     "res://../rust/target/debug/libmachine.so"
+linux.release.x86_64 =   "res://../rust/target/release/libmachine.so"
+windows.debug.x86_64 =   "res://../rust/target/debug/machine.dll"
+windows.release.x86_64 = "res://../rust/target/release/machine.dll"
+macos.debug =            "res://../rust/target/debug/libmachine.dylib"
+macos.release =          "res://../rust/target/release/libmachine.dylib"
+macos.debug.arm64 =      "res://../rust/target/debug/libmachine.dylib"
+macos.release.arm64 =    "res://../rust/target/release/libmachine.dylib"
 

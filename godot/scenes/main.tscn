@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj73f5444crdg"]
+
+[ext_resource type="PackedScene" uid="uid://bdy3vv1jh185c" path="res://models/factory.glb" id="1_mod3i"]
+[ext_resource type="PackedScene" uid="uid://cafyhqoeqedma" path="res://models/clock.glb" id="2_cq0dl"]
+
+[node name="Main" type="Node3D"]
+
+[node name="factory" parent="." instance=ExtResource("1_mod3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.932301, -1.27289, 0.396317)
+
+[node name="clock" parent="." instance=ExtResource("2_cq0dl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3797.9, 477.063, 4761.52)

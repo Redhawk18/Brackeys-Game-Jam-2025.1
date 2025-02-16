@@ -25,7 +25,10 @@
             dotenv.disableHint = true;
 
             languages.rust.enable = true;
-            packages = with pkgs; [ godot_4 ];
+            packages = with pkgs; [
+              blender
+              godot_4
+            ];
 
             env = {
               LD_LIBRARY_PATH = lib.makeLibraryPath (

@@ -1,6 +1,9 @@
 use godot::prelude::*;
 
-struct MyExtension;
+mod scene;
+mod time;
+
+struct Machine;
 
 #[gdextension]
-unsafe impl ExtensionLibrary for MyExtension {}
+unsafe impl ExtensionLibrary for Machine {}
