@@ -15,15 +15,39 @@ visible = false
 [node name="clock" parent="." instance=ExtResource("2_cq0dl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.835781, 4.40004, 2.96976)
 
+[node name="Sprite3D" type="Sprite3D" parent="clock"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00597584, 0.00457668, 0.0486288)
+texture = SubResource("ViewportTexture_wibwp")
+
+[node name="CenterContainer" type="CenterContainer" parent="clock"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="SubViewport" type="SubViewport" parent="clock"]
 
 [node name="Label" type="Label" parent="clock/SubViewport"]
-offset_right = 40.0
-offset_bottom = 23.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.5
+offset_top = -11.5
+offset_right = 20.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.733333, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
 text = "88:88"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Sprite3D" type="Sprite3D" parent="clock"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0597119)
-texture = SubResource("ViewportTexture_wibwp")
+horizontal_alignment = 2
