@@ -1,7 +1,7 @@
 use godot::prelude::*;
 
+mod clock;
 mod scene;
-mod time;
 
 struct Machine;
 

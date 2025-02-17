@@ -1,5 +1,3 @@
-use std::str::SplitTerminator;
-
 use godot::{classes::ITimer, prelude::*};
 
 const DAY: usize = 86400;
@@ -23,17 +21,26 @@ impl ITimer for Clock {
         self.military_time().into()
     }
 
-    fn process(&mut self, _delta: f64) {}
+    fn process(&mut self, _delta: f64) {
+        self.time += self.tick;
+
+        if self.time >= DAY {
+            self.time = 0;
+        }
+
+        godot_print!("{}", self.time);
+    }
 }
 
 impl Clock {
-    pub fn military_time(&self) -> String {
+    fn military_time(&self) -> String {
         let hour = self.time / HOUR;
         let minute = self.time / MINUTE;
 
         String::from(format!("{:02}:{:02}", hour, minute))
     }
-    pub fn standard_time(&self) -> String {
+
+    fn standard_time(&self) -> String {
         let hour = self.time / HOUR;
         let minute = self.time / MINUTE;
 

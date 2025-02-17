@@ -1,12 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://bj73f5444crdg"]
+[gd_scene load_steps=4 format=3 uid="uid://bj73f5444crdg"]
 
 [ext_resource type="PackedScene" uid="uid://bdy3vv1jh185c" path="res://models/factory.glb" id="1_mod3i"]
 [ext_resource type="PackedScene" uid="uid://cafyhqoeqedma" path="res://models/clock.glb" id="2_cq0dl"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_wibwp"]
+viewport_path = NodePath("clock/SubViewport")
 
 [node name="Main" type="Node3D"]
 
 [node name="factory" parent="." instance=ExtResource("1_mod3i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.932301, -1.27289, 0.396317)
+visible = false
 
 [node name="clock" parent="." instance=ExtResource("2_cq0dl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3797.9, 477.063, 4761.52)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.835781, 4.40004, 2.96976)
+
+[node name="SubViewport" type="SubViewport" parent="clock"]
+
+[node name="Label" type="Label" parent="clock/SubViewport"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "88:88"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite3D" type="Sprite3D" parent="clock"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0597119)
+texture = SubResource("ViewportTexture_wibwp")
