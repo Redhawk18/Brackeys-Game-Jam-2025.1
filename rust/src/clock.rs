@@ -29,6 +29,9 @@ impl ITimer for Clock {
         }
 
         godot_print!("{}", self.time);
+
+        // get label and set text to self.military_time()
+        let label = todo!();
     }
 }
 
