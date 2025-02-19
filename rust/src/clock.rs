@@ -1,20 +1,25 @@
-use godot::{classes::ITimer, prelude::*};
+use godot::{classes::Label3D, prelude::*};
 
 const DAY: usize = 86400;
 const HOUR: usize = 3600;
 const MINUTE: usize = 60;
 
 #[derive(GodotClass)]
-#[class(base=Timer)]
+#[class(base=Node3D)]
 pub struct Clock {
+    base: Base<Node3D>,
     tick: usize,
     time: usize,
 }
 
 #[godot_api]
-impl ITimer for Clock {
-    fn init(_base: Base<Self::Base>) -> Self {
-        Clock { tick: 100, time: 0 }
+impl INode3D for Clock {
+    fn init(base: Base<Self::Base>) -> Self {
+        Self {
+            base,
+            tick: 100,
+            time: 0,
+        }
     }
 
     fn to_string(&self) -> GString {
@@ -29,9 +34,8 @@ impl ITimer for Clock {
         }
 
         godot_print!("{}", self.time);
-
-        // get label and set text to self.military_time()
-        let label = todo!();
+        let mut label = self.base().get_node_as::<Label3D>("Time");
+        label.set_text(&self.military_time());
     }
 }
 
