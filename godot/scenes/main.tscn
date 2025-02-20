@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bdy3vv1jh185c" path="res://models/factory.glb" id="1_mod3i"]
 [ext_resource type="PackedScene" uid="uid://cafyhqoeqedma" path="res://models/clock.glb" id="2_cq0dl"]
 
-[node name="Main" type="Node3D"]
+[node name="Main" type="Clock"]
 
 [node name="factory" parent="." instance=ExtResource("1_mod3i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.932301, -1.27289, 0.396317)
@@ -19,3 +19,4 @@ font_size = 200
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.99351, 0.113741, 0, -0.113741, 0.99351, -2.52367, 4.56775, 14.9128)
+current = true

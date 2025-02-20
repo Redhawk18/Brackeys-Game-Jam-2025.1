@@ -17,7 +17,7 @@ impl INode3D for Clock {
     fn init(base: Base<Self::Base>) -> Self {
         Self {
             base,
-            tick: 100,
+            tick: 25,
             time: 0,
         }
     }
@@ -33,9 +33,14 @@ impl INode3D for Clock {
             self.time = 0;
         }
 
-        godot_print!("{}", self.time);
-        let mut label = self.base().get_node_as::<Label3D>("Time");
+        // godot_print!("{}", self.military_time());
+        // let mut labelold = self.base().get_node_as::<Label3D>("Time");
+        let mut label = self.base().get_node_as::<Label3D>("Clock/Time");
+        // let mut label2 = self.base().get_node_as::<Label3D>("Child");
+        // label.set_text(&self.military_time());
         label.set_text(&self.military_time());
+        // labelold.set_text("11:11");
+        // label.set_text("2:2");
     }
 }
 
