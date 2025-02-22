@@ -1,19 +1,17 @@
-use godot::{classes::notify::NodeNotification, prelude::*};
+use godot::prelude::*;
 
 #[derive(GodotClass)]
-#[class(base=Node)]
+#[class(base=Node3D)]
 pub struct Scene {
-    base: Base<Node>,
+    base: Base<Node3D>,
 }
 
 #[godot_api]
 impl Scene {}
 
 #[godot_api]
-impl INode for Scene {
-    fn on_notification(&mut self, _what: NodeNotification) {}
-
-    fn init(base: Base<Node>) -> Self {
+impl INode3D for Scene {
+    fn init(base: Base<Node3D>) -> Self {
         Scene { base }
     }
 
