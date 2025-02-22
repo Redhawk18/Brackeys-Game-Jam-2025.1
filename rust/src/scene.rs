@@ -1,5 +1,3 @@
-use std::default;
-
 use godot::prelude::*;
 
 #[derive(GodotClass)]
@@ -8,9 +6,6 @@ pub struct Scene {
     base: Base<Node3D>,
     music: Option<Gd<AudioStreamPlayer>>,
 }
-
-#[godot_api]
-impl Scene {}
 
 #[godot_api]
 impl INode3D for Scene {
