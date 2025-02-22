@@ -1,20 +1,43 @@
-[gd_scene load_steps=6 format=3 uid="uid://bj73f5444crdg"]
+[gd_scene load_steps=21 format=3 uid="uid://bj73f5444crdg"]
 
 [ext_resource type="PackedScene" uid="uid://dn2lak1s6m4b2" path="res://models/new factory models/factory.glb" id="1_nbt4s"]
 [ext_resource type="PackedScene" uid="uid://cafyhqoeqedma" path="res://models/clock.glb" id="2_cq0dl"]
 [ext_resource type="AudioStream" uid="uid://dpjk1k43s84v7" path="res://sounds/Brackey.mp3" id="3_mu8rh"]
+[ext_resource type="PackedScene" uid="uid://c1ijmnag3ubcl" path="res://models/new factory models/interactive_models/blue_bottle.glb" id="4_8ub6i"]
+[ext_resource type="PackedScene" uid="uid://b0v2rw7t4ypou" path="res://models/new factory models/interactive_models/blue_button.glb" id="5_uv8ri"]
+[ext_resource type="PackedScene" uid="uid://bwwr7164kqrun" path="res://models/new factory models/interactive_models/chemical_chute.glb" id="6_iyyw4"]
+[ext_resource type="PackedScene" uid="uid://blf7s2hvofl1e" path="res://models/new factory models/interactive_models/green_bottle.glb" id="7_lakvc"]
+[ext_resource type="PackedScene" uid="uid://3pxtj1kltlr8" path="res://models/new factory models/interactive_models/green_button.glb" id="8_lwstg"]
+[ext_resource type="PackedScene" uid="uid://dx7vh3g772mme" path="res://models/new factory models/interactive_models/pink_button.glb" id="9_8tq7i"]
+[ext_resource type="PackedScene" uid="uid://dbjc1khre3ux1" path="res://models/new factory models/interactive_models/purple_button.glb" id="10_kk18h"]
+[ext_resource type="PackedScene" uid="uid://xqamfyvrj1sp" path="res://models/new factory models/interactive_models/red_bottle.glb" id="11_psjuu"]
+[ext_resource type="PackedScene" uid="uid://cvi267653fgo5" path="res://models/new factory models/interactive_models/red_button.glb" id="12_ip6t7"]
+[ext_resource type="PackedScene" uid="uid://bnugjsyao8xli" path="res://models/new factory models/interactive_models/telephone.glb" id="13_yny2g"]
+[ext_resource type="PackedScene" uid="uid://dhwrfnscd7w5y" path="res://models/new factory models/interactive_models/valve.glb" id="14_8m62e"]
+[ext_resource type="PackedScene" uid="uid://b1288ypubbir3" path="res://models/new factory models/interactive_models/water_spout.glb" id="15_61wcy"]
+[ext_resource type="PackedScene" uid="uid://dyc0iwonqg0ik" path="res://models/new factory models/interactive_models/yellow_button.glb" id="16_gxd5c"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v7666"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_1kfxd"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_5ddot"]
+
+[sub_resource type="Environment" id="Environment_rvbfa"]
+background_mode = 1
+background_color = Color(0.466181, 0.466181, 0.466181, 1)
+
 [node name="Main" type="Scene"]
 
-[node name="factory2" parent="." instance=ExtResource("1_nbt4s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6991, 0, 14.4793)
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.0152361, 0.999884, 0, -0.999884, -0.0152361, -7.25009, 24.3049, -9.75151)
+light_energy = 20.629
+light_volumetric_fog_energy = 0.0
+spot_range = 39.622
+spot_angle = 78.7568
 
 [node name="Clock" parent="." instance=ExtResource("2_cq0dl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.219332, 2.01471, -1.38289)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.23318, 9.40624, -19.7897)
 
 [node name="Time" type="Label3D" parent="Clock"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0366452)
@@ -23,20 +46,19 @@ text = "22:00"
 font_size = 200
 
 [node name="Player" type="Player" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1401, 4.97902, 4.60454)
+transform = Transform3D(0.507298, 0, -0.861771, 0, 1, 0, 0.861771, 0, 0.507298, -15.6408, 5.33508, 13.6658)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1146, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.247231, 0, 0.624249)
 shape = SubResource("CapsuleShape3D_v7666")
 
-[node name="Pivot" type="Node3D" parent="Player"]
-
-[node name="SpringArm3D" type="SpringArm3D" parent="Player/Pivot"]
+[node name="Pivot" type="SpringArm3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.180859, 0, -0.712522)
 shape = SubResource("SphereShape3D_1kfxd")
 spring_length = 5.0
 
-[node name="Camera3D" type="Camera3D" parent="Player/Pivot/SpringArm3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.101017, 0.226425, 5.93221)
+[node name="Camera3D" type="Camera3D" parent="Player/Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0469643, 0.226425, 0.0169232)
 current = true
 fov = 96.5737
 
@@ -44,3 +66,65 @@ fov = 96.5737
 stream = ExtResource("3_mu8rh")
 volume_db = -27.067
 autoplay = true
+
+[node name="factory2" parent="." instance=ExtResource("1_nbt4s")]
+
+[node name="blue_bottle" parent="." instance=ExtResource("4_8ub6i")]
+
+[node name="blue_button2" parent="." instance=ExtResource("5_uv8ri")]
+
+[node name="chemical_chute" parent="." instance=ExtResource("6_iyyw4")]
+
+[node name="green_bottle" parent="." instance=ExtResource("7_lakvc")]
+
+[node name="green_button2" parent="." instance=ExtResource("8_lwstg")]
+
+[node name="pink_button2" parent="." instance=ExtResource("9_8tq7i")]
+
+[node name="purple_button2" parent="." instance=ExtResource("10_kk18h")]
+
+[node name="red_bottle" parent="." instance=ExtResource("11_psjuu")]
+
+[node name="red_button2" parent="." instance=ExtResource("12_ip6t7")]
+
+[node name="telephone" parent="." instance=ExtResource("13_yny2g")]
+
+[node name="valve" parent="." instance=ExtResource("14_8m62e")]
+
+[node name="water_spout" parent="." instance=ExtResource("15_61wcy")]
+
+[node name="yellow_button" parent="." instance=ExtResource("16_gxd5c")]
+
+[node name="roof" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.3842, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="roof"]
+transform = Transform3D(45.8358, 0, 0, 0, 0.337529, 0, 0, 0, 74.8257, 0, -3.93333, -11.372)
+mesh = SubResource("BoxMesh_5ddot")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_rvbfa")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0400969, 0.999196, 0, -0.999196, 0.0400969, -7.60082, 22.7544, 10.6535)
+light_energy = 20.629
+light_volumetric_fog_energy = 0.0
+spot_range = 39.622
+spot_angle = 78.7568
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SpotLight3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.6425, 17.9184)
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.0152361, 0.999884, 0, -0.999884, -0.0152361, 10.0307, 24.3049, -9.75151)
+light_energy = 20.629
+light_volumetric_fog_energy = 0.0
+spot_range = 39.622
+spot_angle = 78.7568
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.0152361, 0.999884, 0, -0.999884, -0.0152361, -7.25009, 27.2983, -38.1403)
+light_energy = 20.629
+light_volumetric_fog_energy = 0.0
+spot_range = 39.622
+spot_angle = 39.0453
