@@ -27,6 +27,7 @@
             languages.rust.enable = true;
             packages = with pkgs; [
               blender
+              cargo-watch
               godot_4
             ];
 
