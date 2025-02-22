@@ -1,6 +1,7 @@
 use godot::prelude::*;
 
 mod clock;
+mod player;
 mod scene;
 
 struct Machine;

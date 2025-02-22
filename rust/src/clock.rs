@@ -1,10 +1,13 @@
+use std::usize;
+
 use godot::{classes::Label3D, global::log, prelude::*};
 use rand::{prelude::*, rng};
 
 const DAY: usize = 24;
 const HOUR: usize = 60;
 const MINUTE: usize = 60;
-const TIMEOUT: usize = 10000;
+const TIMEOUT: usize = 1000;
+const START: usize = 22;
 
 #[derive(GodotClass)]
 #[class(base=Node3D)]
@@ -23,8 +26,8 @@ impl INode3D for Clock {
     fn init(base: Base<Self::Base>) -> Self {
         Self {
             base,
-            tick: 13,
-            hour: 0,
+            tick: 3,
+            hour: START,
             minute: 0,
             timeout: TIMEOUT,
             rng: rng(),
