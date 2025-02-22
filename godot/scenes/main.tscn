@@ -1,13 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://bj73f5444crdg"]
+[gd_scene load_steps=6 format=3 uid="uid://bj73f5444crdg"]
 
 [ext_resource type="PackedScene" uid="uid://dn2lak1s6m4b2" path="res://models/new factory models/factory.glb" id="1_nbt4s"]
 [ext_resource type="PackedScene" uid="uid://cafyhqoeqedma" path="res://models/clock.glb" id="2_cq0dl"]
+[ext_resource type="AudioStream" uid="uid://dpjk1k43s84v7" path="res://sounds/Brackey.mp3" id="3_mu8rh"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v7666"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_1kfxd"]
 
-[node name="Main" type="Clock"]
+[node name="Main" type="Scene"]
 
 [node name="factory2" parent="." instance=ExtResource("1_nbt4s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6991, 0, 14.4793)
@@ -34,4 +35,10 @@ spring_length = 5.0
 
 [node name="Camera3D" type="Camera3D" parent="Player/Pivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.101017, 0.226425, 5.93221)
+current = true
 fov = 96.5737
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_mu8rh")
+volume_db = -27.067
+autoplay = true
