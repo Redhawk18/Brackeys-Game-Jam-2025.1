@@ -37,7 +37,7 @@ spot_range = 39.622
 spot_angle = 78.7568
 
 [node name="Clock" parent="." instance=ExtResource("2_cq0dl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.23318, 9.40624, -19.7897)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.23318, 9.25428, -19.7897)
 
 [node name="Time" type="Label3D" parent="Clock"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0366452)
