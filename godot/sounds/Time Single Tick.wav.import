@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bfqodcfbc7hfw"
+path="res://.godot/imported/Time Single Tick.wav-2dfad8fca8eac14461d31bcac81bd841.sample"
+
+[deps]
+
+source_file="res://sounds/Time Single Tick.wav"
+dest_files=["res://.godot/imported/Time Single Tick.wav-2dfad8fca8eac14461d31bcac81bd841.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

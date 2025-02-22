@@ -1,23 +1,24 @@
-use godot::{classes::notify::NodeNotification, prelude::*};
+use std::default;
+
+use godot::prelude::*;
 
 #[derive(GodotClass)]
-#[class(base=Node)]
+#[class(base=Node3D)]
 pub struct Scene {
-    base: Base<Node>,
+    base: Base<Node3D>,
+    music: Option<Gd<AudioStreamPlayer>>,
 }
 
 #[godot_api]
 impl Scene {}
 
 #[godot_api]
-impl INode for Scene {
-    fn on_notification(&mut self, _what: NodeNotification) {}
-
-    fn init(base: Base<Node>) -> Self {
-        Scene { base }
+impl INode3D for Scene {
+    fn init(base: Base<Node3D>) -> Self {
+        Scene { base, music: None }
     }
 
     fn ready(&mut self) {
-        // self.music = Some(self.base().get_node_as("Music"));
+        self.music = Some(self.base().get_node_as("Music"));
     }
 }

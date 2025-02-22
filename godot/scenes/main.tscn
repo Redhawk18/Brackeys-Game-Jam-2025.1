@@ -1,12 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://bj73f5444crdg"]
+[gd_scene load_steps=6 format=3 uid="uid://bj73f5444crdg"]
 
-[ext_resource type="PackedScene" uid="uid://bdy3vv1jh185c" path="res://models/factory.glb" id="1_mod3i"]
+[ext_resource type="PackedScene" uid="uid://dn2lak1s6m4b2" path="res://models/new factory models/factory.glb" id="1_nbt4s"]
 [ext_resource type="PackedScene" uid="uid://cafyhqoeqedma" path="res://models/clock.glb" id="2_cq0dl"]
+[ext_resource type="AudioStream" uid="uid://dpjk1k43s84v7" path="res://sounds/Brackey.mp3" id="3_mu8rh"]
 
-[node name="Main" type="Clock"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v7666"]
 
-[node name="factory" parent="." instance=ExtResource("1_mod3i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.52604, -1.27289, 0.396317)
+[sub_resource type="SphereShape3D" id="SphereShape3D_1kfxd"]
+
+[node name="Main" type="Scene"]
+
+[node name="factory2" parent="." instance=ExtResource("1_nbt4s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6991, 0, 14.4793)
 
 [node name="Clock" parent="." instance=ExtResource("2_cq0dl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.219332, 2.01471, -1.38289)
@@ -17,13 +22,23 @@ modulate = Color(1, 0.22, 0.22, 1)
 text = "22:00"
 font_size = 200
 
-[node name="Player" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.60454)
+[node name="Player" type="Player" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.97902, 4.60454)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1146, 0, 0)
+shape = SubResource("CapsuleShape3D_v7666")
 
-[node name="Pivot" type="Node3D" parent="Player"]
+[node name="Pivot" type="SpringArm3D" parent="Player"]
+shape = SubResource("SphereShape3D_1kfxd")
+spring_length = 5.0
 
 [node name="Camera3D" type="Camera3D" parent="Player/Pivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.74544, 3.29946)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.101017, 0.226425, 5.93221)
+current = true
 fov = 96.5737
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_mu8rh")
+volume_db = -27.067
+autoplay = true

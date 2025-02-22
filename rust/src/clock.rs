@@ -1,12 +1,11 @@
-use std::usize;
-
-use godot::{classes::Label3D, global::log, prelude::*};
+use godot::{classes::Label3D, prelude::*};
 use rand::{prelude::*, rng};
 
 const DAY: usize = 24;
 const HOUR: usize = 60;
-const MINUTE: usize = 60;
-const TIMEOUT: usize = 1000;
+// const MINUTE: usize = 60;
+// const TIMEOUT: usize = 1000;
+const TIMEOUT: usize = 100;
 const START: usize = 22;
 
 #[derive(GodotClass)]
@@ -35,7 +34,7 @@ impl INode3D for Clock {
     }
 
     fn to_string(&self) -> GString {
-        self.military_time().into()
+        self.standard_time().into()
     }
 
     fn process(&mut self, _delta: f64) {
@@ -69,7 +68,8 @@ impl Clock {
     }
 
     fn standard_time(&self) -> String {
-        let mut string = format!("{:02}:{:02}", self.hour, self.minute);
+        let hour = self.hour % 12;
+        let mut string = format!("{:02}:{:02}", hour, self.minute);
         if self.hour <= 12 {
             string.push_str(" am");
         } else {

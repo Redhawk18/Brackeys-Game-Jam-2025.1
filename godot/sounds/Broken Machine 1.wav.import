@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b83exq3kx68wu"
+path="res://.godot/imported/Broken Machine 1.wav-4e630341965a12e19f5fe1d490ff0358.sample"
+
+[deps]
+
+source_file="res://sounds/Broken Machine 1.wav"
+dest_files=["res://.godot/imported/Broken Machine 1.wav-4e630341965a12e19f5fe1d490ff0358.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
