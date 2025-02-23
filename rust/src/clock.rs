@@ -57,7 +57,8 @@ impl INode3D for Clock {
             self.minute = 0;
         }
 
-        let mut label = self.base().get_node_as::<Label3D>("Clock/Time");
+        // let mut label = self.base().get_node_as::<Label3D>("Clock/Time");
+        let mut label = self.base().get_node_as::<Label3D>("Time");
         label.set_text(&self.military_time());
     }
 }

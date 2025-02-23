@@ -42,7 +42,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.23318, 9.25428, -19.7897)
 [node name="Time" type="Label3D" parent="Clock"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0366452)
 modulate = Color(1, 0.22, 0.22, 1)
-text = "22:00"
+text = "88:88"
 font_size = 200
 
 [node name="Player" type="Player" parent="."]
@@ -52,12 +52,14 @@ transform = Transform3D(0.507298, 0, -0.861771, 0, 1, 0, 0.861771, 0, 0.507298, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.247231, 0, 0.624249)
 shape = SubResource("CapsuleShape3D_v7666")
 
-[node name="Pivot" type="SpringArm3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.180859, 0, -0.712522)
+[node name="Pivot" type="Node3D" parent="Player"]
+
+[node name="SpringArm3D" type="SpringArm3D" parent="Player/Pivot"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.180858, 0, -0.712523)
 shape = SubResource("SphereShape3D_1kfxd")
 spring_length = 5.0
 
-[node name="Camera3D" type="Camera3D" parent="Player/Pivot"]
+[node name="Camera3D" type="Camera3D" parent="Player/Pivot/SpringArm3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0469643, 0.226425, 0.0169232)
 current = true
 fov = 96.5737
