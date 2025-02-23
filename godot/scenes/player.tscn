@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bp8t0ly0wc2e3"]
+
+[ext_resource type="Script" path="res://scenes/player.gd" id="1_c5lsd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tdp5s"]
+size = Vector3(1, 1.31934, 1)
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_c5lsd")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.642222, 0)
+shape = SubResource("BoxShape3D_tdp5s")
